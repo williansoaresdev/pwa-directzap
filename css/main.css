@@ -3,8 +3,13 @@ body {
     color: #fff;
 }
 
-#mainScreen {
+h1 {
     text-align: center;
+}
+
+#mainScreen {
+    display: none;
+    padding-top: 100px;
 }
 
 #splashScreen {
