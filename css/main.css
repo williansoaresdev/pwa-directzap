@@ -3,6 +3,10 @@ body {
     color: #fff;
 }
 
+#mainScreen {
+    text-align: center;
+}
+
 #splashScreen {
     overflow:hidden;
     padding-top: 100px;
