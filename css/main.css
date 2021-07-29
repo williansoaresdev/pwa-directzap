@@ -11,6 +11,11 @@ h2 {
     text-align: center;
 }
 
+#listButtons{
+    padding-right:20px;
+    padding-left:20px;
+}
+
 #listScreen{
     display: none;
 }

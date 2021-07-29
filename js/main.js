@@ -27,6 +27,29 @@
 
                     var prepareContactList = function() {
 
+                        var countNames = database.contacts.length;
+                        if (countNames=="")
+                            $("#titleList").html("There are no contacts...");
+                        else if (countNames == 1)
+                            $("#titleList").html("There is 1 contact");
+                        else
+                            $("#titleList").html("There are "+countNames+" contacts");
+
+                        if (countNames) {
+                            $("#listGrid").html("");
+                            for(var i=0; i < countNames; i++) {
+                                var htmlLine = "<div class='row'>"
+                                htmlLine += "<div class='col-xs-10'>";
+                                htmlLine += "<span>"+database.contacts[i].name+"</span>";
+                                htmlLine += "</div><div class='col-xs-2'>";
+                                htmlLine += "<button class='btn btn-xs btn-danger'><i class='glyphicon glyphicon-trash'></i></button>";
+                                htmlLine += "&nbsp;<button class='btn btn-xs btn-success'><i class='glyphicon glyphicon-earphone'></i></button>";
+                                htmlLine += "</div></div>";
+
+                                $("#listGrid").append(htmlLine);
+                            }
+                        }
+
                     }
 
                     var saveDatabase = function() {
@@ -104,7 +127,7 @@
                         if (contactName!="") {
                             var done = false;
                             if (database.contacts.length) {
-                                for (i=0;i<database.contacts.length;i++) {
+                                for (var i=0;i<database.contacts.length;i++) {
                                     if (database.contacts[i].name == contactName) {
                                         database.contacts[i] = {"name":contactName,"number":newNumber};
                                         done = true;
