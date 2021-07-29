@@ -27,6 +27,8 @@
 
                     var prepareContactList = function() {
 
+                        $("#listGrid").html("");
+
                         var countNames = database.contacts.length;
                         if (countNames=="")
                             $("#titleList").html("There are no contacts...");
@@ -36,7 +38,6 @@
                             $("#titleList").html("There are "+countNames+" contacts");
 
                         if (countNames) {
-                            $("#listGrid").html("");
                             for(var i=0; i < countNames; i++) {
                                 var htmlLine = "<div class='row top10'>"
                                 htmlLine += "<div class='col-xs-8'>";
