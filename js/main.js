@@ -8,6 +8,25 @@
             $("#splashScreen").slideUp("normal",function(){
                 $("#mainScreen").fadeIn("normal",function(){
 
+                    var newNumber = "";
+
+                    var database = {
+                        contacts: []
+                    }
+
+                    if (window.localStorage) {
+                        var strDatabase = window.localStorage.getItem("zap_database");
+                        if ((typeof(strDatabase)=="string") && (strDatabase!="")) {
+                            database = JSON.parse(strDatabase);
+                        }
+                    }
+
+                    var saveDatabase = function() {
+                        if (window.localStorage) {
+                            window.localStorage.setItem("zap_database",JSON.stringify(database));
+                        }
+                    }
+
                     var noMask = function(content) {
                         return content.replace(/\D/g, '');
                     }
@@ -50,7 +69,7 @@
 
                     $("#btnJustGo").click(function(){
 
-                        var newNumber = noMask($.trim($("#phoneNumber").val()));
+                        newNumber = noMask($.trim($("#phoneNumber").val()));
 
                         if (!validNumber(newNumber))
                             return;
@@ -60,7 +79,7 @@
                     });
 
                     $("#btnMemoGo").click(function(){
-                        var newNumber = noMask($.trim($("#phoneNumber").val()));
+                        newNumber = noMask($.trim($("#phoneNumber").val()));
 
                         if (!validNumber(newNumber))
                             return;
@@ -72,6 +91,32 @@
                         $("#phoneNumber").removeAttr("disabled");
                         $("#mainButtons").show();
                         $("#mainNameField").hide();
+                    });
+
+                    $("#btnSaveGo").click(function(){
+                        var contactName = $.trim($("#contactName").val());
+                        if (contactName!="") {
+                            var done = false;
+                            if (database.contacts.length) {
+                                for (i=0;i<database.contacts.length;i++) {
+                                    if (database.contacts[i].name == contactName) {
+                                        database.contacts[i] = {"name":contactName,"number":newNumber};
+                                        done = true;
+                                        break;
+                                    }
+                                }
+                            }
+                            if (!done) {
+                                database.contacts.push({"name":contactName,"number":newNumber});
+                            }
+                            saveDatabase();
+                        }
+
+                        triggerCall();
+                    });
+
+                    $("#lkShowList").click(function(){
+                        alert('developing...')
                     });
 
                     $("#phoneNumber").focus();

@@ -33,6 +33,7 @@ h1 {
 .bordered {
     border-color: #ee5555;
     border-width: 3px;
+    background-color: #fcff96;
 }
 
 .centered {
