@@ -16,3 +16,7 @@ h1 {
     overflow:hidden;
     padding-top: 100px;
 }
+
+.centered {
+    text-align: center;   
+}

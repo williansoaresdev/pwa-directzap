@@ -6,8 +6,10 @@
     $(document).ready(function(){
         setTimeout(function(){
             $("#splashScreen").slideUp("normal",function(){
-                $("#callScreen").fadeIn("normal");
+                $("#mainScreen").fadeIn("normal",function(){
+                    $("#phoneNumber").focus();
+                });
             });
-        },2000);
+        }, 2000);
     });
 })();
