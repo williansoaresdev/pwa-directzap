@@ -7,6 +7,15 @@ h1 {
     text-align: center;
 }
 
+#mainFooter{
+    padding-top: 50px;
+}
+
+#mainNameField{
+    padding-bottom: 10px;
+    display: none;
+}
+
 #mainPhoneField {
     padding-bottom: 30px;
 }

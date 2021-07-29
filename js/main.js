@@ -40,8 +40,12 @@
                         },1000);
                     }
 
-                    var tryStoreContact = function(newNumber) {
-                        
+                    var askStoreContact = function(newNumber) {
+                        $("#mainButtons").hide();
+                        $("#phoneNumber").attr("disabled","true");
+                        $("#mainNameField").fadeIn("normal",function(){
+                            $("#contactName").focus();
+                        });
                     }
 
                     $("#btnJustGo").click(function(){
@@ -61,8 +65,7 @@
                         if (!validNumber(newNumber))
                             return;
 
-                        tryStoreContact(newNumber);
-                        triggerCall();
+                        askStoreContact();
                     });
 
                     $("#phoneNumber").focus();

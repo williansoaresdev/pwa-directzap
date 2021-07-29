@@ -45,7 +45,24 @@
                         <input id="phoneNumber" type="tel" class="form-control" placeholder="Phone number">
                     </div>
                 </div>
-                <div class="row">
+                <div id="mainNameField">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="contactName" type="tel" class="form-control" placeholder="Contact name">
+                    </div>
+                    <div class="input-group centered">
+                        <button class="btn btn-success wide" id="btnSaveGo">
+                            <i class="glyphicon glyphicon-earphone"></i>
+                            Save and go
+                        </button>
+                        <br />
+                        <button class="btn btn-success wide" id="btnSaveGo">
+                            <i class="glyphicon glyphicon-remove"></i>
+                            Cancel memo
+                        </button>
+                    </div>
+                </div>
+                <div class="row" id="mainButtons">
                     <div class="col-xs-6 centered">
                         <button class="btn btn-default wide" id="btnMemoGo">
                             <i class="glyphicon glyphicon-floppy-save"></i><br />
@@ -64,7 +81,7 @@
                 &nbsp;
             </div>
         </div>
-        <div class="centered">
+        <div id="mainFooter" class="centered">
             <span>
                 <a href="javascript:void(0)" class="foreWhite">See the memorized list</a>
             </span>
