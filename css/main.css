@@ -2,3 +2,8 @@ body {
     background-color: #131C21;
     color: #fff;
 }
+
+#splashScreen {
+    overflow:hidden;
+    padding-top: 100px;
+}
