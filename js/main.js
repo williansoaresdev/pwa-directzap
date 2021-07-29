@@ -52,7 +52,12 @@
                             }
                             $("#listGrid").append("<div>&nbsp;</div>");
                             $(".deleteButton").click(function(){
-                                alert('Delete: '+$(this).attr("contactIndex"));
+                                var contactIndex = ($(this).attr("contactIndex") * 1);
+                                if (contactIndex >= 0) {
+                                    database.contacts.splice(contactIndex, 1);
+                                    saveDatabase();
+                                    prepareContactList();
+                                }
                             });
                             $(".callButton").click(function(){
                                 newNumber = $(this).attr("contactNumber");
