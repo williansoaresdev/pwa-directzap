@@ -56,6 +56,7 @@
                             $("#phoneNumber").removeAttr("disabled");
                             $("#btnMemoGo").removeAttr("disabled");
                             $("#btnJustGo").removeAttr("disabled");
+                            $("#phoneNumber").val("");
                         },1000);
                     }
 
@@ -112,6 +113,10 @@
                             saveDatabase();
                         }
 
+                        $("#contactName").val("");
+                        $("#mainButtons").show();
+                        $("#phoneNumber").attr("disabled","true");
+                        $("#mainNameField").hide();
                         triggerCall();
                     });
 
