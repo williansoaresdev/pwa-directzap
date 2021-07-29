@@ -38,16 +38,24 @@
                         if (countNames) {
                             $("#listGrid").html("");
                             for(var i=0; i < countNames; i++) {
-                                var htmlLine = "<div class='row'>"
+                                var htmlLine = "<div class='row top10'>"
                                 htmlLine += "<div class='col-xs-8'>";
                                 htmlLine += "<span>"+database.contacts[i].name+"</span>";
                                 htmlLine += "</div><div class='col-xs-4' styke='text-align:right'>";
-                                htmlLine += "<button class='btn btn-xs btn-danger'><i class='glyphicon glyphicon-trash'></i></button>";
-                                htmlLine += "&nbsp;<button class='btn btn-xs btn-success'><i class='glyphicon glyphicon-earphone'></i></button>";
+                                htmlLine += "<button contactIndex='"+i+"' class='btn btn-xs btn-danger deleteButton'><i class='glyphicon glyphicon-trash'></i></button>";
+                                htmlLine += "&nbsp;&nbsp;&nbsp;";
+                                htmlLine += "<button contactNumber='"+database.contacts[i].number+"' class='btn btn-xs btn-success'><i class='glyphicon glyphicon-earphone'></i></button>";
                                 htmlLine += "</div></div>";
 
                                 $("#listGrid").append(htmlLine);
                             }
+                            $("#listGrid").append("<div>&nbsp;</div>");
+                            $(".deleteButton").click(function(btn){
+                                alert('Delete: '+$(btn).attr("contactIndex"));
+                            });
+                            $(".callButton").click(function(btn){
+                                alert('Call: '+$(btn).attr("contactNumber"));
+                            });
                         }
 
                     }
