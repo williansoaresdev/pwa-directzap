@@ -12,12 +12,11 @@ h1 {
 }
 
 #mainNameField{
-    padding-bottom: 10px;
     display: none;
 }
 
 #mainPhoneField {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 #mainScreen {
