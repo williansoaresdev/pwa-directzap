@@ -7,6 +7,10 @@ h1 {
     text-align: center;
 }
 
+#mainPhoneField {
+    padding-bottom: 30px;
+}
+
 #mainScreen {
     display: none;
     padding-top: 100px;
@@ -19,4 +23,8 @@ h1 {
 
 .centered {
     text-align: center;   
+}
+
+.wide {
+    width: 100%;
 }
