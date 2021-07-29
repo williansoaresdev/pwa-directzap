@@ -39,9 +39,9 @@
                             $("#listGrid").html("");
                             for(var i=0; i < countNames; i++) {
                                 var htmlLine = "<div class='row'>"
-                                htmlLine += "<div class='col-xs-10'>";
+                                htmlLine += "<div class='col-xs-8'>";
                                 htmlLine += "<span>"+database.contacts[i].name+"</span>";
-                                htmlLine += "</div><div class='col-xs-2'>";
+                                htmlLine += "</div><div class='col-xs-4' styke='text-align:right'>";
                                 htmlLine += "<button class='btn btn-xs btn-danger'><i class='glyphicon glyphicon-trash'></i></button>";
                                 htmlLine += "&nbsp;<button class='btn btn-xs btn-success'><i class='glyphicon glyphicon-earphone'></i></button>";
                                 htmlLine += "</div></div>";
