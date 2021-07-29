@@ -48,6 +48,10 @@ h1 {
     text-decoration: underline;
 }
 
+.top10{
+    padding-top:10px;
+}
+
 .wide {
     width: 100%;
 }

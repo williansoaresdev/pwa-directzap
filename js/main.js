@@ -68,6 +68,12 @@
                         askStoreContact();
                     });
 
+                    $("#btnCancelMemo").click(function(){
+                        $("#phoneNumber").removeAttr("disabled");
+                        $("#mainButtons").show();
+                        $("#mainNameField").hide();
+                    });
+
                     $("#phoneNumber").focus();
                 });
             });
