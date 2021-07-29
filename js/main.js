@@ -41,17 +41,20 @@
                                 var htmlLine = "<div class='row top10'>"
                                 htmlLine += "<div class='col-xs-8'>";
                                 htmlLine += "<span>"+database.contacts[i].name+"</span><br />";
-                                htmlLine += "<span><small style='color:#eeeeee'>"+database.contacts[i].name+"</small></span><br />";
-                                htmlLine += "</div><div class='col-xs-4' styke='text-align:right'>";
-                                htmlLine += "<button contactIndex='"+i+"' class='btn btn-sm btn-danger deleteButton'><i class='glyphicon glyphicon-trash'></i></button>";
+                                htmlLine += "<span><small style='color:#eeeeee'>"+database.contacts[i].number+"</small></span><br />";
+                                htmlLine += "</div><div class='col-xs-4' style='text-align:right'>";
+                                htmlLine += "<button contactIndex='"+i+"' class='btn btn-xs btn-danger deleteButton'><i class='glyphicon glyphicon-trash'></i></button>";
                                 htmlLine += "&nbsp;&nbsp;&nbsp;";
-                                htmlLine += "<button contactNumber='"+database.contacts[i].number+"' class='btn btn-sm btn-success'><i class='glyphicon glyphicon-earphone'></i></button>";
+                                htmlLine += "<button contactNumber='"+database.contacts[i].number+"' class='btn btn-xs btn-success callButton'><i class='glyphicon glyphicon-earphone'></i></button>";
                                 htmlLine += "</div></div>";
 
                                 $("#listGrid").append(htmlLine);
                             }
                             $("#listGrid").append("<div>&nbsp;</div>");
                             $(".deleteButton").click(function(e, btn){
+                                alert(e);
+                                alert(btn);
+                                alert(this);
                                 alert('Delete: '+$(btn).attr("contactIndex"));
                             });
                             $(".callButton").click(function(e, btn){
