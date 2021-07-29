@@ -21,14 +21,18 @@
                         }
                     }
 
+                    var noMask = function(content) {
+                        return content.replace(/\D/g, '');
+                    }
+
+                    var prepareContactList = function() {
+
+                    }
+
                     var saveDatabase = function() {
                         if (window.localStorage) {
                             window.localStorage.setItem("zap_database",JSON.stringify(database));
                         }
-                    }
-
-                    var noMask = function(content) {
-                        return content.replace(/\D/g, '');
                     }
 
                     var validNumber = function(number) {
@@ -92,6 +96,7 @@
                         $("#phoneNumber").removeAttr("disabled");
                         $("#mainButtons").show();
                         $("#mainNameField").hide();
+                        $("#contactName").val("");
                     });
 
                     $("#btnSaveGo").click(function(){
@@ -121,7 +126,22 @@
                     });
 
                     $("#lkShowList").click(function(){
-                        alert('developing...')
+                        
+                        prepareContactList();
+                        $("#mainScreen").fadeOut("normal",function(){
+                            $("#listScreen").fadeIn("normal");
+                        });
+
+                    });
+
+                    $("#btnBackFromList").click(function(){
+                        $("#listScreen").fadeOut("normal",function(){
+                            $("#mainScreen").fadeIn("normal");
+                        });
+                    });
+
+                    $("#phoneNumber").keyup(function(){
+                        $("#phoneNumber").removeClass("bordered");
                     });
 
                     $("#phoneNumber").focus();
