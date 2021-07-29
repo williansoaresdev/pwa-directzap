@@ -13,6 +13,7 @@ h1 {
 
 #mainScreen {
     display: none;
+    overflow:hidden;
     padding-top: 100px;
 }
 
@@ -22,12 +23,20 @@ h1 {
 }
 
 .bordered {
-    border-color:tomato;
+    border-color: #ee5555;
     border-width: 3px;
 }
 
 .centered {
     text-align: center;   
+}
+
+.foreWhite {
+    color: #e5e5e5;
+}
+.foreWhite:hover {
+    color: #fff;
+    text-decoration: underline;
 }
 
 .wide {

@@ -24,13 +24,7 @@
                         return true;
                     }
 
-                    $("#btnJustGo").click(function(){
-
-                        var newNumber = noMask($.trim($("#phoneNumber").val()));
-
-                        if (!validNumber(newNumber))
-                            return;
-
+                    var triggerCall = function() {
                         $("#phoneNumber").attr("disabled","true");
                         $("#btnMemoGo").attr("disabled","true");
                         $("#btnJustGo").attr("disabled","true");
@@ -44,7 +38,31 @@
                             $("#btnMemoGo").removeAttr("disabled");
                             $("#btnJustGo").removeAttr("disabled");
                         },1000);
+                    }
 
+                    var tryStoreContact = function(newNumber) {
+                        
+                    }
+
+                    $("#btnJustGo").click(function(){
+
+                        var newNumber = noMask($.trim($("#phoneNumber").val()));
+
+                        if (!validNumber(newNumber))
+                            return;
+
+                        triggerCall();
+
+                    });
+
+                    $("#btnMemoGo").click(function(){
+                        var newNumber = noMask($.trim($("#phoneNumber").val()));
+
+                        if (!validNumber(newNumber))
+                            return;
+
+                        tryStoreContact(newNumber);
+                        triggerCall();
                     });
 
                     $("#phoneNumber").focus();
