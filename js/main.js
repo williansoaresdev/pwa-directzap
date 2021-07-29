@@ -41,7 +41,7 @@
                                 var htmlLine = "<div class='row top10'>"
                                 htmlLine += "<div class='col-xs-8'>";
                                 htmlLine += "<span>"+database.contacts[i].name+"</span><br />";
-                                htmlLine += "<span><small style='color:#eeeeee'>"+database.contacts[i].number+"</small></span><br />";
+                                htmlLine += "<span><small style='color:#ccc'>"+database.contacts[i].number+"</small></span><br />";
                                 htmlLine += "</div><div class='col-xs-4' style='text-align:right'>";
                                 htmlLine += "<button contactIndex='"+i+"' class='btn btn-xs btn-danger deleteButton'><i class='glyphicon glyphicon-trash'></i></button>";
                                 htmlLine += "&nbsp;&nbsp;&nbsp;";
@@ -51,14 +51,12 @@
                                 $("#listGrid").append(htmlLine);
                             }
                             $("#listGrid").append("<div>&nbsp;</div>");
-                            $(".deleteButton").click(function(e, btn){
-                                alert(e);
-                                alert(btn);
-                                alert(this);
-                                alert('Delete: '+$(btn).attr("contactIndex"));
+                            $(".deleteButton").click(function(){
+                                alert('Delete: '+$(this).attr("contactIndex"));
                             });
-                            $(".callButton").click(function(e, btn){
-                                alert('Call: '+$(btn).attr("contactNumber"));
+                            $(".callButton").click(function(){
+                                newNumber = $(this).attr("contactNumber");
+                                triggerCall();
                             });
                         }
 
