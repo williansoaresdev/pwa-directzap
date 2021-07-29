@@ -21,6 +21,11 @@ h1 {
     padding-top: 100px;
 }
 
+.bordered {
+    border-color:violet;
+    border-width: 3px;
+}
+
 .centered {
     text-align: center;   
 }
