@@ -2,12 +2,10 @@
  * Inicialização do service worker
  */
 if ('serviceWorker' in navigator) {
-    $("#mainTitle").html("Tem o serviceWorker...");
     navigator.serviceWorker
-        .register('/pwa-directzap/js/sw.js')
+        .register('sw.js')
         .then(() => { 
             console.log('Service Worker Registered'); 
-            $("#mainTitle").html("Service Worker Registered");
         });
 }
 
