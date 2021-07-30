@@ -1,4 +1,13 @@
 /**
+ * Inicialização do service worker
+ */
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+        .register('/pwa-directzap/js/sw.js')
+        .then(() => { console.log('Service Worker Registered'); });
+}
+
+/**
  * Código motor da aplicação
 */
 
