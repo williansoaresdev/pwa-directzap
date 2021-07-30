@@ -27,6 +27,7 @@ self.addEventListener('install', (e) => {
         '/pwa-directzap/bootstrap/fonts/glyphicons-halflings-regular.woff2',
         '/pwa-directzap/bootstrap/js/bootstrap.min.js',
         '/pwa-directzap/css/main.css',
+        '/pwa-directzap/img/icon_192.png',
         '/pwa-directzap/img/apple-touch-icon.png',
         '/pwa-directzap/img/apple-touch-icon-57x57.png',
         '/pwa-directzap/img/apple-touch-icon-72x72.png',
