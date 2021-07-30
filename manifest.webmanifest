@@ -1,15 +1,21 @@
 {
+    "theme_color": "black",
     "background_color": "black",
     "description": "Allow whatsapp messaging without save a contact.",
     "display": "fullscreen",
     "icons": [
         {
-        "src": "img/apple-touch-icon-180x180.png",
-        "sizes": "180x180",
-        "type": "image/png"
+            "src": "img/icon_192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img/logo1.png",
+            "sizes": "512x512",
+            "type": "image/png"
         }
     ],
     "name": "Direct Zap",
-    "short_name": "DZap",
+    "short_name": "Direct Zap",
     "start_url": "/pwa-directzap/index.html"
 }
